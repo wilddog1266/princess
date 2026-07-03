@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Princess — premium beauty studio. Elegant, modern, immersive."
+    />
+    <meta name="theme-color" content="#f7f2ee" />
+    <title>Princess — Beauty Studio</title>
+    <!--
+      Anti-FOUC: resolve and apply the theme before first paint so there is
+      no flash of the wrong palette. Mirrors the STORAGE_KEY in ThemeProvider.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('princess-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : prefersDark ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

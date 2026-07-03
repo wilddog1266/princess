@@ -1,0 +1,97 @@
+/**
+ * tokens.css — Primitive design tokens (theme-agnostic).
+ * Raw values only. Semantic mapping lives in themes.css.
+ * Never reference these primitives directly in components — use semantic vars.
+ */
+
+:root {
+  /* ----------------------------------------------------------------------
+   * Accent — soft orange-pink "warm sunset". Not neon, not saturated.
+   * One warm coral hue (~16°), used as the single brand accent.
+   * -------------------------------------------------------------------- */
+  --accent-50: #fbefea;
+  --accent-100: #f6ddd2;
+  --accent-200: #efc3b2;
+  --accent-300: #e8a893;
+  --accent-400: #e08e74;
+  --accent-500: #d87a5e;
+  --accent-600: #c26a50;
+
+  /* ----------------------------------------------------------------------
+   * Warm neutral scale — porcelain → warm charcoal.
+   * Warm undertone (never blue-black) so dark theme reads cinematic, not cold.
+   * -------------------------------------------------------------------- */
+  --warm-0: #ffffff;
+  --warm-50: #f7f2ee;
+  --warm-100: #efe8e2;
+  --warm-200: #e2d9d1;
+  --warm-300: #cfc4ba;
+  --warm-400: #a99e94;
+  --warm-500: #807870;
+  --warm-600: #6e655c;
+  --warm-700: #3d3833;
+  --warm-800: #262220;
+  --warm-900: #1a1715;
+  --warm-950: #121010;
+
+  /* ----------------------------------------------------------------------
+   * Radius scale. UI 12–16px, surfaces 20–24px, pill for chips/CTAs.
+   * No radii above 24px (childish UI).
+   * -------------------------------------------------------------------- */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* ----------------------------------------------------------------------
+   * Easing — named curves. The single source of truth for all motion.
+   * No default ease-in-out anywhere.
+   * -------------------------------------------------------------------- */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1); /* easeOutExpo — reveals */
+  --ease-panel: cubic-bezier(0.76, 0, 0.24, 1); /* easeInOutQuart — panels, theme */
+  --ease-hover: cubic-bezier(0.22, 1, 0.36, 1); /* easeOut — micro-interactions */
+
+  /* ----------------------------------------------------------------------
+   * Durations.
+   * -------------------------------------------------------------------- */
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-slow: 600ms;
+  --dur-reveal: 700ms;
+  --dur-panel: 500ms;
+  --dur-theme: 800ms;
+
+  /* ----------------------------------------------------------------------
+   * Typography families. Self-hosted variable fonts (see main.tsx).
+   * Display: high-contrast editorial serif. Body: humanist sans.
+   * -------------------------------------------------------------------- */
+  --font-display: 'Fraunces Variable', 'Times New Roman', serif;
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+
+  /* ----------------------------------------------------------------------
+   * Fluid type scale (≤ 6 sizes total). clamp(min, vw, max).
+   * -------------------------------------------------------------------- */
+  --text-display: clamp(3rem, 9vw, 7rem); /* 48 → 112px hero */
+  --text-h2: clamp(2rem, 4vw, 3.5rem); /* 32 → 56px */
+  --text-h3: clamp(1.5rem, 2vw, 1.75rem); /* 24 → 28px */
+  --text-body: clamp(1rem, 1.1vw, 1.125rem); /* 16 → 18px */
+  --text-caption: 0.8125rem; /* 13px tracked labels */
+
+  /* ----------------------------------------------------------------------
+   * Section rhythm — air is the primary material.
+   * -------------------------------------------------------------------- */
+  --space-section: clamp(7.5rem, 14vw, 13.75rem); /* 120 → 220px */
+  --content-max: 82.5rem; /* 1320px */
+  --measure: 64ch; /* reading width */
+
+  /* ----------------------------------------------------------------------
+   * Z-index ladder — single source so layers never collide.
+   * -------------------------------------------------------------------- */
+  --z-content: 1;
+  --z-nav-trigger: 40;
+  --z-theme-toggle: 40;
+  --z-nav-panel: 50;
+  --z-preloader: 90;
+  --z-cursor: 100;
+}

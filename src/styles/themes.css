@@ -1,0 +1,73 @@
+/**
+ * themes.css — Semantic tokens mapped per theme.
+ * Components consume ONLY these semantic vars (via Tailwind utilities or var()).
+ * Switching [data-theme] re-lights the entire page for free.
+ */
+
+/* ======================================================================
+ * LIGHT — "warm studio daylight": clean, premium, warm, soft.
+ * ==================================================================== */
+[data-theme='light'] {
+  --bg: var(--warm-50);
+  --bg-elev: var(--warm-0);
+  --surface: var(--warm-0);
+
+  --text: #221e1b;
+  --text-muted: var(--warm-600);
+  --border: rgba(38, 34, 32, 0.1);
+  --border-strong: rgba(38, 34, 32, 0.16);
+
+  /* Accent tuned rosier/deeper for contrast on porcelain */
+  --accent: var(--accent-500);
+  --accent-strong: var(--accent-600);
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(216, 122, 94, 0.1);
+  --accent-glow: rgba(216, 122, 94, 0.28);
+
+  /* Warm-tinted shadows: tight contact + soft ambient */
+  --shadow-sm: 0 1px 2px rgba(38, 34, 32, 0.04), 0 2px 6px -2px rgba(38, 34, 32, 0.06);
+  --shadow-md: 0 2px 4px rgba(38, 34, 32, 0.05), 0 12px 28px -10px rgba(38, 34, 32, 0.12);
+  --shadow-lg: 0 4px 8px rgba(38, 34, 32, 0.06), 0 24px 48px -16px rgba(38, 34, 32, 0.16);
+
+  /* Hero portrait grade — same image, warm daylight read with enough contrast
+     to hold presence against porcelain. drop-shadow follows the silhouette. */
+  --portrait-filter: brightness(0.99) contrast(1.06) saturate(1.06)
+    drop-shadow(0 30px 44px rgba(38, 34, 32, 0.2));
+
+  /* Form validation state — a muted terracotta, never a harsh red. */
+  --error: #b5564a;
+}
+
+/* ======================================================================
+ * DARK — "cinematic evening": luxurious, calm, high-end.
+ * Light bleeds (glow) rather than casts.
+ * ==================================================================== */
+[data-theme='dark'] {
+  --bg: var(--warm-900);
+  --bg-elev: var(--warm-800);
+  --surface: var(--warm-800);
+
+  --text: #f2ece6;
+  --text-muted: var(--warm-400);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Accent tuned more luminous/peachy against charcoal */
+  --accent: var(--accent-300);
+  --accent-strong: var(--accent-200);
+  --accent-contrast: var(--warm-900);
+  --accent-soft: rgba(232, 168, 147, 0.1);
+  --accent-glow: rgba(232, 168, 147, 0.32);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 28px -10px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 24px 60px -18px rgba(0, 0, 0, 0.7);
+
+  /* Hero portrait grade — cinematic low-key with a warm accent rim glow. */
+  --portrait-filter: brightness(0.96) contrast(1.05) saturate(1.01)
+    drop-shadow(0 42px 60px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 38px rgba(232, 168, 147, 0.18));
+
+  /* Form validation state — lightened for contrast against charcoal. */
+  --error: #d98f80;
+}
