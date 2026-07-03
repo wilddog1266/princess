@@ -31,7 +31,10 @@ export function CursorEffect() {
       const hex = getComputedStyle(root).getPropertyValue('--accent').trim();
       const m = /^#?([0-9a-f]{6})$/i.exec(hex);
       if (m) {
-        const n = parseInt(m[1], 16);
+        const value = m[1];
+        if (!value) return;
+
+        const n = parseInt(value, 16);
         accent = `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`;
       }
       additive = root.getAttribute('data-theme') === 'dark';
